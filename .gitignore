@@ -16,24 +16,24 @@
  * @author    Phergie Development Team <team@phergie.org>
  * @copyright 2008-2011 Phergie Development Team (http://phergie.org)
  * @license   http://phergie.org/license New BSD License
- * @link      http://pear.phergie.org/package/Phergie_Plugin_Browser
+ * @link      http://pear.phergie.org/package/Phergie_Plugin_WebsiteAdd
  */
 
 /**
  * Performs website responce time after time interval.
  *
  * @category Phergie
- * @package  Phergie_Plugin_Browser
+ * @package  Phergie_Plugin_WebsiteAdd
  * @author   
  * @license  http://phergie.org/license New BSD License
- * @link     http://pear.phergie.org/package/Phergie_Plugin_Browser
+ * @link     http://pear.phergie.org/package/Phergie_Plugin_WebsiteAdd
  */
-class Phergie_Plugin_Performance extends Phergie_Plugin_Abstract
+class Phergie_Plugin_Performance extends Phergie_Plugin_WebsiteAdd
 {
     /**
      * Check the website performance.
      *
-     * @param  $domainname accepts the website name i.e localhost/Browser.php; www.yahoo.co.uk
+     * @param  $domain accepts the website name i.e localhost/website.php; www.yahoo.co.uk
      *
      * @return floor $status calculate the responce time $starttime and $stoptime
      */
@@ -56,9 +56,9 @@ class Phergie_Plugin_Performance extends Phergie_Plugin_Abstract
 	}
     	   
    	public function webStatus($domain){
-	$domainbase = str_replace("http://","",strtolower($domain));
-    $status = pingDomain($domainbase); 
-		if ($status != -1) echo "http://$domainbase is ALIVE ($status ms)"; 
-        else               echo "http://$domainbase is DOWN ($status ms)"; 
+	$website = str_replace("http://","",strtolower($domain));
+    $status = pingDomain($website); 
+		if ($status != -1) echo "http://$website is ALIVE ($status ms)"; 
+        else               echo "http://$website is DOWN ($status ms)"; 
 	}
 }
