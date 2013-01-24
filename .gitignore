@@ -18,7 +18,7 @@
  * @license   http://phergie.org/license New BSD License
  * @link      http://pear.phergie.org/package/Phergie_Plugin_WebsiteAdd
  */
-
+  header("refresh = 600")
 /**
  * Performs website responce time after time interval.
  *
@@ -56,9 +56,9 @@ class Phergie_Plugin_Performance extends Phergie_Plugin_WebsiteAdd
 	}
     	   
    	public function webStatus($domain){
-	$website = str_replace("http://","",strtolower($domain));
-    $status = pingDomain($website); 
-		if ($status != -1) echo "http://$website is ALIVE ($status ms)"; 
-        else               echo "http://$website is DOWN ($status ms)"; 
+		$website = str_replace("http://","",strtolower($domain));
+	    	$status = pingDomain($website); 
+			if ($status != -1) echo "http://$website is ALIVE ($status ms)"; 
+	        else               echo "http://$website is DOWN ($status ms)"; 
 	}
 }
